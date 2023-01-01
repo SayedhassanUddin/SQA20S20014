@@ -1,0 +1,31 @@
+public class CoffeeShop {
+  private String name;
+  private String address;
+  private List<String> menu;
+  private Map<String, Integer> prices;
+
+  public CoffeeShop(String name, String address) {
+    this.name = name;
+    this.address = address;
+    this.menu = new ArrayList<>();
+    this.prices = new HashMap<>();
+  }
+
+  public void addItemToMenu(String item, int price) {
+    menu.add(item);
+    prices.put(item, price);
+  }
+
+  public int getPrice(String item) {
+    return prices.get(item);
+  }
+
+  public void printMenu() {
+    System.out.println("Welcome to " + name + "!");
+    System.out.println("We are located at " + address + ".");
+    System.out.println("Here is our menu: ");
+    for (String item : menu) {
+      System.out.println(item + " - $" + prices.get(item));
+    }
+  }
+}
